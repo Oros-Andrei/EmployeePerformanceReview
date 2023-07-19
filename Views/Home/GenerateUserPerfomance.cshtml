@@ -1,0 +1,25 @@
+﻿@model UserInfoModel
+
+@{
+    ViewData["Title"] = "Generate Perfomanace Raport";
+}
+
+<h2>@ViewBag.Title</h2>
+<br />
+@using (Html.BeginForm("GenerateUserPerfomance", "Home", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group" style="width: 250px">
+        @Html.LabelFor(model => model.Name)
+        @Html.TextBoxFor(model => model.Name, new { @class = "form-control", required = "required" })
+    </div>
+
+    <div class="form-group" style="width: 250px">
+        @Html.LabelFor(model => model.LoginEmail)
+        @Html.TextBoxFor(model => model.LoginEmail, new { @class = "form-control", required = "required" })
+    </div>
+    <br />
+    <div>
+        <input type="submit" value="Fetch Performance" class="btn btn-primary" />
+    </div>
+}

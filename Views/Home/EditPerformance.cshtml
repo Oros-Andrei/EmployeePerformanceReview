@@ -1,0 +1,24 @@
+﻿@model UserInfoModel
+
+<h2>Edit User Performance</h2>
+
+@using (Html.BeginForm("EditPerformance", "Home", FormMethod.Post))
+{
+    <div class="form-group" style="width: 250px">
+        @Html.LabelFor(model => model.Name, "Name:")
+        @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group" style="width: 250px">
+        @Html.LabelFor(model => model.LoginEmail, "Email:")
+        @Html.TextBoxFor(model => model.LoginEmail, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group" style="width: 250px">
+        @Html.LabelFor(model => model.PerformanceScore, "Performance:")
+        @Html.TextBoxFor(model => model.PerformanceScore, new { @class = "form-control" })
+    </div>
+    <br />
+    <input type="submit" value="Update Performance" class="btn btn-primary" />
+
+}
